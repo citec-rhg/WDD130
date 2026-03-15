@@ -1,13 +1,12 @@
 nav {
     background-color: darkblue;
-    padding: 10pox;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     display: block;
-    padding: 20pox;
-    margin: center
+    padding: 20px;
 }
 
 h1 {
