@@ -1,97 +1,73 @@
-/* CSS Variables */
-:root {
-    --primary-color: #0a9396;
-    --secondary-color: #94d2bd;
-    --accent1-color: #005f73;
-    --accent2-color: #ee9b00;
-    --heading-font: Arial, sans-serif;
-    --body-font: Verdana, sans-serif;
-}
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* General */
-body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-}
-
-/* Layout Width */
-header,
-main,
-footer {
-    width: 840px;
-    margin: 0 auto;
-}
-
-/* Headings */
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-/* Spacing */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* Navigation */
-nav a {
-    text-decoration: none;
-    margin-right: 15px;
-    color: var(--accent1-color);
-}
-
-/* Social Media */
-.socialmedia a {
-    text-decoration: none;
-}
-
-/* Hero Section */
 .hero {
     position: relative;
+    width: 100%;
+    max-width: 840px;
+    margin: 0 auto;
+    height: 100%;
+    /* full hero height restored */
+    overflow: hidden;
 }
 
-.hero img {
+.hero img.hero-bg {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    /* fill entire hero height */
+    object-fit: cover;
+    /* keeps background image proportion */
 }
 
-/* Hero Heading Overlay */
 .hero h1 {
     position: absolute;
-    top: 20px;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 16px;
+    padding: 20px;
     text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
+    background-color: rgba(11, 60, 93, 0.8);
     color: #fff;
+    font-family: var(--heading-font);
+    font-size: 2em;
+    z-index: 2;
 }
 
-/* Hero Article Overlay */
 .hero article {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: var(--secondary-color);
-    padding: 10px;
+    bottom: 0;
+    /* stick at bottom of hero */
+    left: 0;
+    width: 100%;
+    /* full width of hero */
+    height: 30%;
+    /* takes 30% of hero height */
+    display: flex;
+    align-items: center;
+    /* vertically center content inside article */
+    justify-content: center;
+    /* horizontally center content */
+    gap: 16px;
+    background: rgba(217, 179, 16, 0.8);
+    /* semi-transparent overlay */
+    padding: 16px;
+    box-sizing: border-box;
+    z-index: 2;
 }
 
-/* Article Image */
 .hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 10px;
+    width: auto;
+    /* scale with height */
+    height: 100%;
+    /* fill the 30% height of the article */
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.hero article p {
+    margin: 0;
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    font-size: 1.2em;
+    line-height: 1.4em;
+    max-width: 60%;
+    /* prevent text from stretching too far */
 }
