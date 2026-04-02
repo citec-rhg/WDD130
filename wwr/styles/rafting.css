@@ -1,73 +1,71 @@
-.hero {
-    position: relative;
-    width: 100%;
-    max-width: 840px;
-    margin: 0 auto;
-    height: 100%;
-    /* full hero height restored */
-    overflow: hidden;
-}
-
-.hero img.hero-bg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    /* fill entire hero height */
-    object-fit: cover;
-    /* keeps background image proportion */
-}
-
-.hero h1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(11, 60, 93, 0.8);
-    color: #fff;
-    font-family: var(--heading-font);
-    font-size: 2em;
-    z-index: 2;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 0;
-    /* stick at bottom of hero */
-    left: 0;
-    width: 100%;
-    /* full width of hero */
-    height: 30%;
-    /* takes 30% of hero height */
-    display: flex;
+/* HEADER GRID */
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
     align-items: center;
-    /* vertically center content inside article */
-    justify-content: center;
-    /* horizontally center content */
-    gap: 16px;
-    background: rgba(217, 179, 16, 0.8);
-    /* semi-transparent overlay */
-    padding: 16px;
-    box-sizing: border-box;
-    z-index: 2;
+    padding: 1rem;
 }
 
-.hero article img {
-    width: auto;
-    /* scale with height */
-    height: 100%;
-    /* fill the 30% height of the article */
-    border-radius: 6px;
-    flex-shrink: 0;
+/* NAV FLEX */
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
 }
 
-.hero article p {
-    margin: 0;
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-    font-size: 1.2em;
-    line-height: 1.4em;
-    max-width: 60%;
-    /* prevent text from stretching too far */
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* HISTORY GRID */
+.history {
+    padding: 2rem;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.history-content img {
+    width: 100%;
+}
+
+/* ADVENTURE FLEX */
+.adventure-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.adventure-gallery figure {
+    flex: 1;
+    text-align: center;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: auto;
+}
+
+/* FOOTER FLEX */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social img {
+    width: 30px;
 }
